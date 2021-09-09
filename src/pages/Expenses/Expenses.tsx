@@ -9,6 +9,8 @@ import optionIcons from "../../assets/png/menuIcon.png";
 import cartIcon from "../../assets/svg/cartIcon.svg";
 import transportIcon from "../../assets/svg/transportIcon.svg";
 import houseIcon from "../../assets/svg/houseIcon.svg";
+import boxes from "../../assets/png/boxes.png";
+import plant from "../../assets/png/plant.png";
 
 const data = [
   {
@@ -148,6 +150,34 @@ const previousExpenses = [
   },
 ];
 
+const spendCategories = [
+  {
+    id: 1,
+    category: "Food and Drinks",
+    price: 872.4,
+  },
+  {
+    id: 2,
+    category: "Shopping",
+    price: 1378.2,
+  },
+  {
+    id: 3,
+    category: "Housing",
+    price: 928.5,
+  },
+  {
+    id: 4,
+    category: "Transportation",
+    price: 420.7,
+  },
+  {
+    id: 5,
+    category: "Vehicle",
+    price: 520,
+  },
+];
+
 export default function Expenses() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -184,8 +214,8 @@ export default function Expenses() {
               </div>
             </div>
             <p className={styles.dateRange}>01 - 09 Sept, 2021</p>
-            <ResponsiveContainer width="100%" minHeight="9vh">
-              <BarChart width={150} height={40} data={data}>
+            <ResponsiveContainer width="100%" height="9%">
+              <BarChart data={data}>
                 <Bar
                   dataKey="uv"
                   fill="rgba(21, 122, 255, .2)"
@@ -282,6 +312,49 @@ export default function Expenses() {
                 </li>
               ))}
             </ul>
+          </section>
+          <section className={styles.moneyOverview}>
+            <p className={styles.moneyOverviewTitle}>Where'd you money go?</p>
+            <ul>
+              {spendCategories.map((spendCategory) => (
+                <li key={spendCategory.id}>
+                  <div className={styles.spendCategory}>
+                    <p className={styles.spendCategoryName}>
+                      {spendCategory.category}
+                    </p>
+                    <p className={styles.spendCategoryPrice}>
+                      {spendCategory.price.toFixed(2)}
+                    </p>
+                  </div>
+                  <div className={styles.spendCategoryBar}>
+                    <div
+                      style={{
+                        width: `${
+                          (spendCategory.price /
+                            spendCategories.reduce(
+                              (acc, current) => acc + current.price,
+                              0
+                            )) *
+                          100
+                        }%`,
+                      }}
+                      className={styles.spendCategoryColorBar}
+                    ></div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <div className={styles.saveMoneyDiv}>
+              <img className={styles.boxes} src={boxes} alt="boxes" />
+              <img className={styles.plants} src={plant} alt="" />
+              <p className={styles.saveMoneyTitle}>Save more money</p>
+              <p className={styles.saveMoneyInfo}>
+                Lorem, ipsum dolor sit amet conse adipi elit. Quos volup{" "}
+              </p>
+              <button className={styles.button} type="button">
+                VIEW TIPS
+              </button>
+            </div>
           </section>
         </div>
       </main>

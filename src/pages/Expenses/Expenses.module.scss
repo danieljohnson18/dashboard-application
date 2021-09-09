@@ -15,12 +15,14 @@
   width: 95%;
   height: 95%;
   border-radius: 30px;
-  overflow-y: scroll;
+
+  display: flex;
 }
 
 .expensesOverview {
   width: 65%;
   padding: 5rem;
+  overflow-y: scroll;
 }
 
 .expensesHeader {
@@ -82,6 +84,10 @@
   font-weight: 600;
 }
 
+.optionIcon {
+  cursor: pointer;
+}
+
 .expenseItem {
   margin: 1rem;
   display: flex;
@@ -120,6 +126,94 @@
   font-weight: 600;
 }
 
-.optionIcon {
+.moneyOverview {
+  width: 35%;
+  background-color: #f9fafc;
+  padding: 5rem 2rem;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.spendCategory {
+  display: flex;
+  justify-content: space-between;
+}
+
+.moneyOverviewTitle {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.spendCategoryName {
+  font-weight: 500;
+}
+
+.spendCategoryBar {
+  height: 5px;
+  width: 100%;
+  background-color: #eceff5;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.spendCategoryColorBar {
+  height: 5px;
+  background-color: #31ba96;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.saveMoneyDiv {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #edf0f6;
+  padding: 2rem;
+  margin-top: 4rem;
+  border-radius: 15px;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.boxes {
+  position: absolute;
+  top: -15px;
+  left: 29px;
+}
+
+.plants {
+  position: absolute;
+  top: -31px;
+  right: 30px;
+}
+
+.saveMoneyTitle {
+  margin-top: 4rem;
+  font-weight: 600;
+}
+
+.saveMoneyInfo {
+  opacity: 0.7;
+  line-height: 21px;
+  margin-top: 0.5rem;
+  letter-spacing: 0.428571px;
+}
+
+.button {
+  background-color: #101010;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  line-height: 19px;
+  font-size: 13px;
+  padding: 1rem 2.5rem;
+  margin-top: 1.5rem;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
