@@ -15,14 +15,13 @@
   width: 95%;
   height: 95%;
   border-radius: 30px;
-
+  overflow-y: scroll;
   display: flex;
 }
 
 .expensesOverview {
   width: 65%;
   padding: 5rem;
-  overflow-y: scroll;
 }
 
 .expensesHeader {
@@ -131,7 +130,6 @@
   background-color: #f9fafc;
   padding: 5rem 2rem;
   height: 100%;
-  overflow-y: scroll;
 }
 
 .spendCategory {
